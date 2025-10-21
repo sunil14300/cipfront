@@ -1,0 +1,85 @@
+/* ============================
+   CipherStudio Code Editor Styling
+   ============================ */
+
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #1e293b; /* slate-800 */
+  border: 1px solid #334155; /* slate-700 */
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Top Bar: Filename + Save Button */
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.editor-filename {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.875rem;
+  color: #94a3b8; /* slate-400 */
+  border: 1px solid #334155; /* slate-700 */
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background-color: #0f172a; /* darker slate for contrast */
+}
+
+.editor-save-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #2563eb; /* blue-600 */
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.editor-save-btn:hover {
+  background-color: #1d4ed8; /* blue-700 */
+  transform: scale(1.02);
+}
+
+/* Empty State (when no file selected) */
+.editor-empty {
+  padding: 1rem;
+  height: 420px;
+  color: #64748b; /* slate-500 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* CodeMirror editor customization */
+.cm-editor {
+  border-radius: 0.75rem;
+  border: 1px solid #334155; /* slate-700 */
+  background-color: #0f172a; /* dark background */
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(30, 58, 138, 0.3); /* blue glow */
+}
+
+/* CodeMirror scrollbars */
+.cm-scroller::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb {
+  background-color: #475569; /* slate-600 */
+  border-radius: 4px;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb:hover {
+  background-color: #64748b; /* lighter on hover */
+}

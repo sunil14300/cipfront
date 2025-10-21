@@ -1,0 +1,141 @@
+/* ============================
+   CipherStudio File Explorer Styling
+   ============================ */
+
+.file-explorer {
+  background-color: #1e293b; /* slate-800 */
+  border: 1px solid #334155; /* slate-700 */
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.file-explorer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #334155; /* slate-700 */
+}
+
+.file-explorer-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cbd5e1; /* slate-300 */
+}
+
+.file-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: #2563eb; /* blue-600 */
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.file-add-btn:hover {
+  background-color: #1d4ed8; /* blue-700 */
+  transform: scale(1.03);
+}
+
+/* File list */
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.file-list-empty {
+  color: #64748b; /* slate-500 */
+  font-size: 0.85rem;
+  text-align: left;
+  padding-top: 0.5rem;
+}
+
+/* File item */
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border 0.15s ease;
+}
+
+.file-item:hover {
+  background-color: #334155; /* slate-700 */
+}
+
+.file-item.active {
+  background-color: rgba(30, 64, 175, 0.5); /* blue-900/50 */
+  border: 1px solid #2563eb; /* blue-600 */
+}
+
+/* File name and icon */
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.file-name {
+  font-size: 0.9rem;
+  color: #e2e8f0; /* slate-200 */
+}
+
+.file-name.inactive {
+  color: #cbd5e1; /* slate-300 */
+}
+
+/* Action buttons (rename, delete) */
+.file-actions {
+  display: flex;
+  gap: 0.4rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.file-item:hover .file-actions {
+  opacity: 1;
+}
+
+.file-action-btn {
+  border: none;
+  background: transparent;
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.file-action-btn:hover {
+  background-color: #475569; /* slate-600 */
+}
+
+.file-action-btn.delete {
+  color: #ef4444; /* red-500 */
+}
+
+.file-action-btn.delete:hover {
+  color: #fca5a5; /* red-300 */
+}
+
+.file-action-btn.rename {
+  color: #94a3b8; /* slate-400 */
+}
+
+.file-action-btn.rename:hover {
+  color: #ffffff;
+}
