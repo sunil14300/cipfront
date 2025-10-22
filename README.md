@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+CipherStudio: A Full-Stack Browser-Based React IDE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project Overview
 
-## Available Scripts
+CipherStudio is a browser-based, dark-themed online code editor built to simulate a modern Integrated Development Environment (IDE) environment. Users can create projects, manage multiple files (.js, .html, .css), edit code in a professional CodeMirror environment, and see the live output rendered in real-time.
 
-In the project directory, you can run:
+This project was built following the specifications outlined in the CipherSchools Full Stack Assignment, focusing on robust file persistence (MongoDB/Express) and a highly professional user experience (Tailwind CSS, Autosave).
 
-### `npm start`
+Key Features Implemented
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Core Functionality: Create, load, and manage projects with a unique ID.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+File Management: Create, rename, and delete multiple files (.html, .js, .css) within a project.
 
-### `npm test`
+Real-Time Preview: Live rendering of the project output as code is typed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Code Editor: Rich editing experience powered by CodeMirror with syntax highlighting and a dark theme.
 
-### `npm run build`
+Autosave (Bonus Feature): Changes are debounced and automatically saved to the backend API every 800ms, providing a seamless, worry-free editing experience.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Save Status: Visual feedback ("Unsaved changes...", "Saving...", "Saved") is provided to the user.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Professional UI/UX: A high-contrast, dark-mode design implemented using Tailwind CSS for a modern IDE feel.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+LLM Integration: Backend endpoint is configured to interact with the OpenAI API for code generation (accessible via a future UI implementation).
 
-### `npm run eject`
+Technical Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Component
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Technology
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Role
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Frontend
 
-## Learn More
+React, Tailwind CSS
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+UI/UX, Component Management, CodeMirror Editor, API interaction.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Backend
 
-### Code Splitting
+Node.js, Express.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+REST API for project management, authentication, and LLM proxy.
 
-### Analyzing the Bundle Size
+Database
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+MongoDB / Mongoose
 
-### Making a Progressive Web App
+Persistent storage for users, projects, and file content.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Setup and Installation
 
-### Advanced Configuration
+This repository assumes a monorepo structure, with separate frontend and backend directories.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Prerequisites
 
-### Deployment
+Node.js (v18+)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+MongoDB Instance (Local or MongoDB Atlas)
 
-### `npm run build` fails to minify
+OpenAI API Key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Backend Setup
+
+Navigate to the backend directory.
+
+Install dependencies: npm install
+
+Create a file named .env and configure it:
+
+PORT=5000
+MONGO_URI=mongodb+srv://user:password@cluster.mongodb.net/cipherstudio?retryWrites=true&w=majority
+JWT_SECRET=YOUR_RANDOM_SECRET_KEY
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+
+
+Start the server: npm start (or npm run dev if configured)
+The server will run on http://localhost:5000.
+
+2. Frontend Setup
+
+Navigate to the frontend directory.
+
+Install dependencies: npm install
+
+Create a file named .env and configure the API URL:
+
+# CRITICAL: This must point to the backend's address and port
+REACT_APP_API_URL=http://localhost:5000/api 
+
+
+Start the client application: npm start
+The client will run on http://localhost:3000 (or the next available port).
+
+Deployment Strategy
+
+The application is designed for production deployment on modern hosting platforms.
+
+Component
+
+Recommended Service
+
+Configuration
+
+Frontend (React)
+
+Vercel
+
+Link GitHub repo, set Environment Variable REACT_APP_API_URL to the deployed backend endpoint.
+
+Backend (Express)
+
+Render or Railway
+
+Link GitHub repo, set MONGO_URI, JWT_SECRET, and OPENAI_API_KEY Environment Variables.
+
+<img width="1893" height="917" alt="Screenshot 2025-10-22 200412" src="https://github.com/user-attachments/assets/868d982e-7476-4e93-8ad1-0bc4e036fe66" />
+![<img width="1888" height="926" alt="Screenshot 2025-10-22 200547" src="https://github.com/user-attachments/assets/df71b26a-a54a-41e9-b04b-7f7fc82a6e30" />
+Uploading image.png…]()
